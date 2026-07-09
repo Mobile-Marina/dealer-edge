@@ -301,6 +301,9 @@ body {
 
 .nav-logo img {
   height: clamp(36px, 4.8vw, 51px);
+  /* width:auto beats the img's width attribute — without it the logo stays
+     172px wide while the height scales up, squashing it horizontally. */
+  width: auto;
   display: block;
 }
 
