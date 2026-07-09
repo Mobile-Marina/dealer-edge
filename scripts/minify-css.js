@@ -35,6 +35,8 @@ const INPUTS = [
   'analytics-late.css',
   'features.css',
   'roi.css',
+  'integrations.css',
+  'getting-started.css',
 ];
 
 function stripComments(css) {

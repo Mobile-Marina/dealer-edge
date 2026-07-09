@@ -26,7 +26,10 @@ import { fileURLToPath } from 'node:url';
 const SITE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TARGET = path.resolve(process.argv[2] || 'C:\\Users\\jason\\repos\\dealerEdge-demo-generator');
 
-const PAGES = ['sales', 'marketing', 'inventory', 'analytics', 'features', 'index', 'roi'];
+const PAGES = ['sales', 'marketing', 'inventory', 'analytics', 'features', 'index', 'roi', 'integrations', 'getting-started', 'pricing', 'case-study', 'support'];
+// Platform route when it isn't just /<page> — keeps site-kb.json doc URLs
+// (what the AI agent cites) in sync with the platform's island routes.
+const KB_ROUTES = { 'case-study': '/case-studies/premier-watersports' };
 // index.html (homepage) now ships: app.js is on the DE.boot/DE.destroy lifecycle
 // and uses the shared demo-modal (js/demo-modal.js) for lead capture.
 // mobile-nav.js is excluded everywhere: the platform renders DeHeader instead.
@@ -264,10 +267,15 @@ async function main() {
     const html = await fs.readFile(path.join(SITE_ROOT, `${page}.html`), 'utf8');
 
     // ── meta from <head> + <body> ──
-    const title = html.match(/<title>([^<]*)<\/title>/)?.[1]?.trim() ?? '';
-    const description = html.match(/<meta\s+name="description"\s+content="([^"]*)"/)?.[1] ?? '';
+    // Meta values are consumed as plain text (Next metadata + the site-kb
+    // docs), so decode the entities HTML requires in attribute/title text.
+    const decodeEntities = (s) => s
+      .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&#x27;/gi, "'");
+    const title = decodeEntities(html.match(/<title>([^<]*)<\/title>/)?.[1]?.trim() ?? '');
+    const description = decodeEntities(html.match(/<meta\s+name="description"\s+content="([^"]*)"/)?.[1] ?? '');
     const og = {};
-    for (const m of html.matchAll(/<meta\s+property="og:(\w+)"\s+content="([^"]*)"/g)) og[m[1]] = m[2];
+    for (const m of html.matchAll(/<meta\s+property="og:(\w+)"\s+content="([^"]*)"/g)) og[m[1]] = decodeEntities(m[2]);
     const bodyClass = html.match(/<body\s+class="([^"]*)"/)?.[1] ?? '';
     const css = [...html.matchAll(/<link\s+rel="stylesheet"\s+href="(css\/[^"?]+)(?:\?[^"]*)?"/g)].map((m) => m[1]);
     const fonts = [...html.matchAll(/<link[^>]+href="(https:\/\/fonts\.googleapis\.com\/css2[^"]+)"[^>]*>/g)].map((m) => m[1]);
@@ -311,7 +319,7 @@ async function main() {
     } catch { /* no late partial for this page */ }
     kbDocs.push({
       page,
-      url: page === 'index' ? '/' : `/${page}`,
+      url: KB_ROUTES[page] ?? (page === 'index' ? '/' : `/${page}`),
       title,
       description,
       content: kbContent.slice(0, 16000),

@@ -2173,6 +2173,110 @@ html.csd-from-transition .csd-hero-img {
   transform: translateY(0);
 }
 
+/* Hero eyebrow (replaces the dealer logo slot) */
+.csd-hero-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(6px);
+}
+
+/* Body section headings */
+.csd-body-title {
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0 0 1.4rem;
+}
+
+.csd-body-inner .section-label { display: block; }
+
+.csd-body-text + .csd-body-text { margin-top: 1.4rem; }
+
+/* Before/after tables */
+.csd-table-wrap {
+  overflow-x: auto;
+  margin-top: 1.8rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.csd-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.csd-table th {
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+}
+
+.csd-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-mid);
+  line-height: 1.55;
+  vertical-align: top;
+}
+
+.csd-table tbody tr:last-child td { border-bottom: none; }
+
+.csd-table td strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Keyword movement list */
+.csd-kw-list {
+  list-style: none;
+  margin: 1.6rem 0;
+  padding: 0;
+}
+
+.csd-kw-list li {
+  padding: 12px 2px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-mid);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.csd-kw-list li:first-child { border-top: 1px solid var(--border); }
+
+.csd-kw-list li strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* "What other dealers do you have?" honest section */
+.csd-honest-inner { max-width: 820px; }
+
+.csd-honest-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 2.4rem;
+}
+
 /* ─── MOBILE NAV ─── */
 .nav-toggle {
   display: none;

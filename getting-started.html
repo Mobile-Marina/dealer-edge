@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding &amp; Setup Time — Live in the First Two Weeks | DealerEdge</title>
+  <meta name="description" content="How long DealerEdge setup takes: the Day 1 to Day 30 onboarding and implementation timeline for a new dealership — inventory sync, website launch, AI activation, training, and white-glove launch monitoring.">
+  <link rel="stylesheet" href="css/deep-core.min.css?v=20260703c">
+  <link rel="stylesheet" href="css/getting-started.min.css?v=20260708a">
+  <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body class="gs-page">
+
+  <!-- Cursor -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+  <div class="custom-cursor" id="custom-cursor">
+    <div class="custom-cursor-inner">
+      <span class="cursor-label cursor-label--journey">Scroll</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="index.html"><img src="assets/dealer-edge-logo-horiz.webp" alt="DealerEdge" width="172" height="36"></a>
+      </div>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Platform
+            <svg class="nav-dropdown-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="features.html" role="menuitem">Overview</a>
+            <a href="inventory.html" role="menuitem">Inventory <i class="nav-dot"></i></a>
+            <a href="marketing.html" role="menuitem">Marketing <i class="nav-dot"></i></a>
+            <a href="sales.html" role="menuitem">Sales <i class="nav-dot nav-dot--red"></i></a>
+            <a href="analytics.html" role="menuitem">Analytics <i class="nav-dot"></i></a>
+          </div>
+        </div>
+        <a href="roi.html">ROI</a>
+        <a href="case-studies.html">Results</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="btn-nav js-modal">Get Started</a>
+      </div>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-panel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-panel" id="nav-mobile-panel" aria-hidden="true">
+      <button type="button" class="nav-mobile-group-trigger" aria-expanded="false">Platform
+        <svg class="nav-mobile-group-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-mobile-sub">
+        <a href="features.html">Overview</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="sales.html">Sales</a>
+        <a href="analytics.html">Analytics</a>
+      </div>
+      <a href="roi.html">ROI Calculator</a>
+      <a href="case-studies.html">Results</a>
+      <a href="#" class="btn-primary btn-nav js-modal nav-mobile-cta">Schedule your Demo</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ──────────────────────────────────────────────────────────────
+       GETTING STARTED / ONBOARDING TIMELINE — answers "how long does
+       setup take?" with the approved Day 1 → Day 30 implementation
+       plan. The site-live claim is deliberately "first two weeks",
+       not "first week" — do not tighten it. Structure: hero short
+       answer → timeline rail → what we need from you → demo CTA.
+       ────────────────────────────────────────────────────────────── -->
+  <section data-section="onboarding_hero" class="gs-hero">
+    <div class="gs-hero-bg" aria-hidden="true">
+      <div class="gs-hero-grid"></div>
+      <div class="gs-hero-glow"></div>
+    </div>
+
+    <div class="gs-wrap">
+      <header class="gs-head" data-fade>
+        <span class="de-section-label">Getting Started &middot; Onboarding &amp; Setup</span>
+        <h1>&ldquo;How long does <span class="gs-accent">setup</span> take?&rdquo;</h1>
+        <p class="gs-lede">Short answer: <b>your new site is typically live within the first two weeks, and the full platform &mdash; AI follow-up, marketing, reporting &mdash; is fully running within 30 days.</b> Your team's time investment is a kickoff call, a review pass, and training. Here's the whole implementation, step by step.</p>
+      </header>
+
+      <div class="gs-facts" data-fade data-delay="0.12">
+        <div class="gs-fact">
+          <span class="gs-fact-num">First two weeks</span>
+          <span class="gs-fact-label">your new site is typically live</span>
+        </div>
+        <div class="gs-fact">
+          <span class="gs-fact-num">30 days</span>
+          <span class="gs-fact-label">full platform fully running</span>
+        </div>
+        <div class="gs-fact">
+          <span class="gs-fact-num">Under 48 hours</span>
+          <span class="gs-fact-label">your review changes go live</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section data-section="onboarding_timeline" class="gs-timeline-section">
+    <div class="gs-wrap">
+      <header class="gs-section-head" data-fade>
+        <span class="de-section-label">The implementation timeline</span>
+        <h2>Day 1 to Day 30,<br><span class="gs-accent">step by step.</span></h2>
+      </header>
+
+      <div class="gs-timeline" data-gs-timeline>
+        <div class="gs-rail" aria-hidden="true"><span class="gs-rail-fill"></span></div>
+
+        <div class="gs-step" data-fade>
+          <div class="gs-step-when"><span class="gs-when-chip">Day 1</span></div>
+          <div class="gs-step-dot"><span></span></div>
+          <div class="gs-step-body">
+            <h3>Kickoff &amp; connect</h3>
+            <p>One call. We connect your inventory source &mdash; a native DMS feed, a feed export, secure file-drop, or straight from your current website if your DMS has no export &mdash; and collect brand assets (logo, locations, team). No IT project on your side; <b>setup of the data connection is our job, not yours.</b></p>
+          </div>
+        </div>
+
+        <div class="gs-step" data-fade>
+          <div class="gs-step-when"><span class="gs-when-chip">Week 1</span></div>
+          <div class="gs-step-dot"><span></span></div>
+          <div class="gs-step-body">
+            <h3>We build, you review</h3>
+            <p>The AI builds your site: every unit pulled in, 65+ fields normalized per boat, listing copy written, photos enhanced, category and location pages generated, schema and SEO foundation in place. You get a full preview and a review pass &mdash; <b>changes go live in under 48 hours.</b></p>
+          </div>
+        </div>
+
+        <div class="gs-step" data-fade>
+          <div class="gs-step-when"><span class="gs-when-chip gs-when-chip--live">Weeks 1&ndash;2 &middot; Go live</span></div>
+          <div class="gs-step-dot gs-step-dot--live"><span></span></div>
+          <div class="gs-step-body">
+            <h3>Website live</h3>
+            <p>Your new site launches, typically within the first two weeks of kickoff. From this point, <b>new units entered in your DMS appear as complete listings the same day,</b> and sold boats come down everywhere automatically.</p>
+          </div>
+        </div>
+
+        <div class="gs-step" data-fade>
+          <div class="gs-step-when"><span class="gs-when-chip">Once you're live</span></div>
+          <div class="gs-step-dot"><span></span></div>
+          <div class="gs-step-body">
+            <h3>AI goes to work <span class="gs-plan-tag">Growth and Dominance</span></h3>
+            <p>AI Customer Connect switches on: 24/7 website chat and SMS/email auto-response with <b>first touch in under 90 seconds.</b> Nurture streams, unified inbox, and &mdash; on Growth+ &mdash; AI-managed Google and Meta advertising begin. <b>For the first two weeks after launch, our team runs daily white-glove monitoring</b> on every new dealership: a human reviews your leads, your AI conversations, and your site performance every day.</p>
+          </div>
+        </div>
+
+        <div class="gs-step" data-fade>
+          <div class="gs-step-when"><span class="gs-when-chip">Days 15&ndash;30</span></div>
+          <div class="gs-step-dot"><span></span></div>
+          <div class="gs-step-body">
+            <h3>Training, tuning, first report</h3>
+            <p>Your team gets trained on the dashboard &mdash; leads, inventory management, content, reporting. We tune lead routing and follow-up to how your store actually sells, and you receive your <b>first monthly performance report with your baseline established,</b> so every month after is measured against something real.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What we need from you -->
+  <section data-section="onboarding_what_we_need" class="gs-need-section">
+    <div class="gs-wrap">
+      <header class="gs-section-head" data-fade>
+        <span class="de-section-label">Your part</span>
+        <h2>What we need <span class="gs-accent">from you.</span></h2>
+        <p class="gs-need-lede">Honestly, not much: one kickoff call, brand assets, a listing review pass, and about an hour of dashboard training for your team.</p>
+      </header>
+
+      <div class="gs-need-grid">
+        <div class="gs-need-card" data-fade>
+          <span class="gs-need-num">01</span>
+          <h3>One kickoff call</h3>
+          <p>The Day 1 call where we connect your inventory source. Setup of the data connection is our job, not yours.</p>
+        </div>
+        <div class="gs-need-card" data-fade data-delay="0.06">
+          <span class="gs-need-num">02</span>
+          <h3>Brand assets</h3>
+          <p>Logo, locations, team &mdash; collected on the kickoff call.</p>
+        </div>
+        <div class="gs-need-card" data-fade data-delay="0.12">
+          <span class="gs-need-num">03</span>
+          <h3>A listing review pass</h3>
+          <p>Review your full site preview in week one; your changes go live in under 48 hours.</p>
+        </div>
+        <div class="gs-need-card" data-fade data-delay="0.18">
+          <span class="gs-need-num">04</span>
+          <h3>About an hour of training</h3>
+          <p>Dashboard training for your team &mdash; leads, inventory management, content, reporting.</p>
+        </div>
+      </div>
+
+      <p class="gs-need-note" data-fade>Dealers don't stall onboarding &mdash; <b>missing data access does,</b> and our website-based onboarding path removes even that.</p>
+    </div>
+  </section>
+
+  <!-- Demo CTA -->
+  <section data-section="onboarding_cta" class="gs-cta-section">
+    <div class="gs-wrap">
+      <div class="gs-cta" data-fade>
+        <span class="de-section-label">Next step</span>
+        <h2>Want the exact plan <span class="gs-accent">for your store?</span></h2>
+        <p>On the demo we'll tell you which inventory path applies to your DMS and what your specific week-one looks like.</p>
+        <button type="button" class="btn-primary btn-primary--large js-modal">Schedule your demo<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-body">
+      <div class="footer-inner">
+        <div class="footer-col footer-col--brand">
+          <img src="assets/dealer-edge-logo-horiz.webp" alt="DealerEdge" class="footer-logo" width="162" height="34" loading="lazy" decoding="async">
+          <p class="footer-tagline">More leads in. Faster response out. Nothing lost in between.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Platform</p>
+          <nav class="footer-nav">
+            <a href="features.html">Features</a>
+            <a href="sales.html">Sales</a>
+            <a href="marketing.html">Marketing</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="roi.html">ROI Calculator</a>
+            <a href="case-studies.html">Results</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">News &amp; Updates</p>
+          <p class="footer-newsletter-sub">Get the latest on AI sales, dealership trends, and platform updates.</p>
+          <form class="footer-newsletter-form" onsubmit="return false">
+            <input type="email" placeholder="Your email address" class="footer-email-input">
+            <button type="submit" class="btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="footer-bar-inner">
+        <span class="footer-copy">© 2026 DealerEdge. All rights reserved.</span>
+        <span class="footer-copy">Built for dealers who move fast.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mobile-nav.min.js?v=20260630a" defer></script>
+  <script src="js/getting-started.min.js?v=20260708a" defer></script>
+</body>
+</html>

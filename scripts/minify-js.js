@@ -23,6 +23,8 @@ const INPUTS = [
   'features-late.js',
   'pricing.js',
   'roi.js',
+  'integrations.js',
+  'getting-started.js',
   'case-studies.js',
   'case-study.js',
 ];

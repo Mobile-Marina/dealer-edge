@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMS Integrations — Connect Any Dealer Management System | DealerEdge</title>
+  <meta name="description" content="How DealerEdge connects to your DMS: native WinBoats and Lightspeed feeds, XML/CSV feed ingestion from any dealer management system, secure file-drop, and website-based onboarding when your DMS has no export at all.">
+  <link rel="stylesheet" href="css/deep-core.min.css?v=20260703c">
+  <link rel="stylesheet" href="css/integrations.min.css?v=20260708a">
+  <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+</head>
+<body class="integrations-page">
+
+  <!-- Cursor -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+  <div class="custom-cursor" id="custom-cursor">
+    <div class="custom-cursor-inner">
+      <span class="cursor-label cursor-label--journey">Scroll</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="index.html"><img src="assets/dealer-edge-logo-horiz.webp" alt="DealerEdge" width="172" height="36"></a>
+      </div>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Platform
+            <svg class="nav-dropdown-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="features.html" role="menuitem">Overview</a>
+            <a href="inventory.html" role="menuitem">Inventory <i class="nav-dot"></i></a>
+            <a href="marketing.html" role="menuitem">Marketing <i class="nav-dot"></i></a>
+            <a href="sales.html" role="menuitem">Sales <i class="nav-dot nav-dot--red"></i></a>
+            <a href="analytics.html" role="menuitem">Analytics <i class="nav-dot"></i></a>
+          </div>
+        </div>
+        <a href="roi.html">ROI</a>
+        <a href="case-studies.html">Results</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="btn-nav js-modal">Get Started</a>
+      </div>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-panel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-panel" id="nav-mobile-panel" aria-hidden="true">
+      <button type="button" class="nav-mobile-group-trigger" aria-expanded="false">Platform
+        <svg class="nav-mobile-group-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-mobile-sub">
+        <a href="features.html">Overview</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="sales.html">Sales</a>
+        <a href="analytics.html">Analytics</a>
+      </div>
+      <a href="roi.html">ROI</a>
+      <a href="case-studies.html">Results</a>
+      <a href="#" class="btn-primary btn-nav js-modal nav-mobile-cta">Schedule your Demo</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ──────────────────────────────────────────────────────────────
+       HERO — the one question every dealer asks first, answered
+       honestly: four ways in, one of them fits.
+       ────────────────────────────────────────────────────────────── -->
+  <section data-section="hero" class="int-hero" id="hero">
+    <div class="int-hero-glow" aria-hidden="true"></div>
+    <div class="section-container int-hero-inner">
+      <span class="section-label" data-fade>Integrations</span>
+      <h1 data-fade data-delay="0.08">Your inventory, <span class="int-hero-accent">wherever it lives.</span></h1>
+      <p class="int-hero-sub" data-fade data-delay="0.16">Dealers ask us one question first: <em>&ldquo;Does DealerEdge work with my DMS?&rdquo;</em> The honest answer is yes &mdash; because we built four ways in, and one of them works for every dealership we've met.</p>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────
+       FOUR INGESTION PATHS — the page's spine. Named DMS systems
+       beyond WinBoats/Lightspeed appear ONLY inside the conditional
+       "if your DMS can export a feed" framing (path 2) — do not
+       promote them into standalone integration claims.
+       ────────────────────────────────────────────────────────────── -->
+  <section data-section="ingestion_paths" class="int-paths-section" id="paths">
+    <div class="section-container">
+      <div data-fade>
+        <span class="section-label">Four Ways In</span>
+        <h2 class="section-title">Four ways to connect<br><span class="dim">your DMS.</span></h2>
+      </div>
+
+      <div class="int-paths-grid">
+
+        <div class="int-path-card" data-fade>
+          <span class="int-path-num" aria-hidden="true">01</span>
+          <div class="int-path-body">
+            <h3>Native DMS feeds</h3>
+            <p>DealerEdge ingests dealer management system inventory feeds directly &mdash; <b>WinBoats</b> and <b>Lightspeed</b> feeds sync automatically today. A new unit entered in your DMS shows up as a complete, sales-ready listing the same day, and only changes are processed on each sync, so nothing goes stale.</p>
+          </div>
+        </div>
+
+        <div class="int-path-card" data-fade data-delay="0.05">
+          <span class="int-path-num" aria-hidden="true">02</span>
+          <div class="int-path-body">
+            <h3>Any DMS with a feed export</h3>
+            <p>Run <b>Dockmaster, DX1, Blackpurl, IDS Astra, or another system?</b> If your DMS can export inventory &mdash; XML or CSV, scheduled or on demand &mdash; DealerEdge normalizes it into the same 65+ field unit record we build from native feeds: year, make, model, price, engine, hours, options, colors, HIN, location, and everything else your DMS knows about the boat. Setup is part of onboarding; you don't build anything.</p>
+          </div>
+        </div>
+
+        <div class="int-path-card" data-fade data-delay="0.1">
+          <span class="int-path-num" aria-hidden="true">03</span>
+          <div class="int-path-body">
+            <h3>Secure file-drop</h3>
+            <p>No API, no scheduled export? Your team (or your DMS vendor) drops the inventory file into a private, secure folder and DealerEdge picks it up and syncs automatically. This is live in production today &mdash; it's how some of our feeds run.</p>
+          </div>
+        </div>
+
+        <div class="int-path-card" data-fade data-delay="0.15">
+          <span class="int-path-num" aria-hidden="true">04</span>
+          <div class="int-path-body">
+            <h3>No export at all? We onboard from your website.</h3>
+            <p>This is the one nobody else offers: if your inventory already lives on your current website, DealerEdge can <b>read it straight from your site</b> &mdash; every unit, specs, and photos &mdash; and build your new inventory from there. No DMS project, no IT ticket, no data entry. It's how we can baseline a dealership before a contract is even signed.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────
+       AFTER THE CONNECTION — every path lands in the same pipeline.
+       ────────────────────────────────────────────────────────────── -->
+  <section data-section="after_connection" class="int-after-section" id="after-the-connection">
+    <div class="section-container">
+      <div data-fade>
+        <span class="section-label">After the Connection</span>
+        <h2 class="section-title">What happens after<br><span class="dim">the connection.</span></h2>
+      </div>
+      <p class="int-after-lead" data-fade>However your data arrives, every unit gets the same treatment:</p>
+
+      <ul class="int-after-list" data-fade data-delay="0.08">
+        <li><span class="int-check">&#10003;</span><span><b>65+ fields normalized per boat</b> &mdash; no more &ldquo;3 of 65 fields made it online&rdquo;</span></li>
+        <li><span class="int-check">&#10003;</span><span>AI-written listing copy, enhanced photos (the boat stays the boat), specs, financing, FAQ, and schema on every unit</span></li>
+        <li><span class="int-check">&#10003;</span><span>Sync out to your website, Google, AI search, Boat Trader, YachtWorld, Facebook Marketplace, and more</span></li>
+        <li><span class="int-check">&#10003;</span><span>Sold and status changes propagate to every channel automatically</span></li>
+        <li><span class="int-check">&#10003;</span><span>MAP compliance enforced by brand before anything publishes</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section data-section="integrations_cta" class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="section-container cta-inner">
+      <div class="cta-tag" data-fade>Which path fits?</div>
+      <h2 class="cta-title" data-fade data-delay="0.1">Not sure which path<br>fits your DMS?</h2>
+      <p class="cta-sub" data-fade data-delay="0.2">Tell us what you run on your demo call &mdash; mapping your feed is a standard part of onboarding, not a custom project.</p>
+      <div data-fade data-delay="0.3">
+        <a href="#" class="btn-primary btn-primary--large js-modal">Schedule your Demo</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-body">
+      <div class="footer-inner">
+        <div class="footer-col footer-col--brand">
+          <img src="assets/dealer-edge-logo-horiz.webp" alt="DealerEdge" class="footer-logo" width="162" height="34" loading="lazy" decoding="async">
+          <p class="footer-tagline">More leads in. Faster response out. Nothing lost in between.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Platform</p>
+          <nav class="footer-nav">
+            <a href="features.html">Features</a>
+            <a href="sales.html">Sales</a>
+            <a href="marketing.html">Marketing</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="roi.html">ROI Calculator</a>
+            <a href="case-studies.html">Results</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">News &amp; Updates</p>
+          <p class="footer-newsletter-sub">Get the latest on AI sales, dealership trends, and platform updates.</p>
+          <form class="footer-newsletter-form" onsubmit="return false">
+            <input type="email" placeholder="Your email address" class="footer-email-input">
+            <button type="submit" class="btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="footer-bar-inner">
+        <span class="footer-copy">© 2026 DealerEdge. All rights reserved.</span>
+        <span class="footer-copy">Built for dealers who move fast.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/de-core.min.js?v=20260707a" defer></script>
+  <script src="js/integrations.min.js?v=20260708a" defer></script>
+</body>
+</html>

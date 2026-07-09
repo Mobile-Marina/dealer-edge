@@ -149,51 +149,6 @@
     return true;
   }
 
-  function initPricingToggle() {
-    const toggle = document.getElementById('pricing-toggle');
-    const pill = document.getElementById('pricing-toggle-pill');
-    const priceEl = document.getElementById('pricing-price');
-    const noteEl = document.getElementById('pricing-billed-note');
-    const badgeEl = document.getElementById('pricing-save-badge');
-    const toggleBtns = Array.from(document.querySelectorAll('.pricing-toggle-btn'));
-    if (!toggle || !pill || !priceEl || !noteEl || !badgeEl || !toggleBtns.length) return;
-
-    const pricing = {
-      monthly: { price: '$1,497', note: 'Billed month-to-month. Cancel anytime.', save: '' },
-      quarterly: { price: '$1,347', note: 'Billed $4,041 every 3 months.', save: 'Save 10%' },
-      yearly: { price: '$1,247', note: 'Billed $14,964 once per year.', save: 'Save 17%' },
-    };
-    const rows = {
-      monthly: document.getElementById('pb-monthly'),
-      quarterly: document.getElementById('pb-quarterly'),
-      yearly: document.getElementById('pb-yearly'),
-    };
-    let activePeriod = 'monthly';
-
-    function setPeriod(period) {
-      const data = pricing[period] || pricing.monthly;
-      const activeBtn = toggle.querySelector(`.pricing-toggle-btn[data-period="${period}"]`) || toggleBtns[0];
-      const toggleRect = toggle.getBoundingClientRect();
-      const btnRect = activeBtn.getBoundingClientRect();
-      activePeriod = period;
-
-      pill.style.width = `${btnRect.width}px`;
-      pill.style.left = `${btnRect.left - toggleRect.left}px`;
-      toggleBtns.forEach((btn) => btn.classList.toggle('is-active', btn.dataset.period === period));
-
-      priceEl.textContent = data.price;
-      noteEl.textContent = data.note;
-      badgeEl.textContent = data.save;
-      badgeEl.style.opacity = data.save ? '1' : '0';
-      Object.entries(rows).forEach(([key, row]) => row?.classList.toggle('is-active', key === period));
-    }
-
-    toggleBtns.forEach((btn) => btn.addEventListener('click', () => setPeriod(btn.dataset.period)));
-    window.addEventListener('resize', () => setPeriod(activePeriod), { passive: true });
-    window.addEventListener('load', () => setPeriod(activePeriod), { once: true });
-    requestAnimationFrame(() => setPeriod(activePeriod));
-  }
-
   function initPricingScrollHint() {
     if (document.querySelector('.de-scroll-hint')) return;
     const hint = document.createElement('div');
@@ -229,7 +184,6 @@
     }
 
     initPricingReveals();
-    initPricingToggle();
 
     if (!initPricingModal() && typeof initDemoModal === 'function') initDemoModal(null);
     if (typeof initMobileNav === 'function') initMobileNav();

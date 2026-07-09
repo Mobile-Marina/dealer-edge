@@ -73,14 +73,16 @@ window.addEventListener('DOMContentLoaded', () => {
       cursor.style.top  = e.clientY + 'px';
     }, { passive: true });
 
-    document.querySelectorAll('.csp-card').forEach(card => {
+    // Journey cursor + page transition only for cards that link somewhere
+    // (OEM pedigree cards are plain <article>s with no detail page).
+    document.querySelectorAll('a.csp-card[href]').forEach(card => {
       card.addEventListener('mouseenter', () => cursor.classList.add('journey-active'));
       card.addEventListener('mouseleave', () => cursor.classList.remove('journey-active'));
       card.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = card.dataset.csId;
         hydrateDeferredCardMedia(card);
         const img = card.querySelector('.csp-card-img');
+        if (!img) return; // text-only card: native navigation
+        e.preventDefault();
         const rect = img.getBoundingClientRect();
         const overlay = document.createElement('div');
         overlay.style.cssText = `position:fixed;z-index:9998;background-image:url('${img.currentSrc || img.src}');background-size:cover;background-position:center;border-radius:20px;top:${rect.top}px;left:${rect.left}px;width:${rect.width}px;height:${rect.height}px;`;
@@ -96,7 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         overlay.addEventListener('transitionend', () => {
           sessionStorage.setItem('csd-from-transition', '1');
-          window.location.href = `case-study.html?id=${id}`;
+          window.location.href = card.getAttribute('href');
         }, { once: true });
       });
     });

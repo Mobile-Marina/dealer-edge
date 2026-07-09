@@ -1566,62 +1566,9 @@ body {
   line-height: 1.65;
 }
 
-/* What's Included */
-.pricing-includes-section {
-  padding: clamp(80px, 11vh, 130px) 0;
-  background: #000;
-}
-
+/* Shared left-aligned section header */
 .pricing-includes-header {
   margin-bottom: 3.5rem;
-}
-
-.pricing-features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.pricing-feature-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: clamp(24px, 2.5vw, 36px);
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-  transition: border-color 0.3s ease, background 0.3s ease;
-}
-
-.pricing-feature-card:hover {
-  border-color: var(--border-hover);
-  background: rgba(255,255,255,0.04);
-}
-
-.pf-icon {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--accent-dim);
-  border: 1px solid rgba(224, 47, 46,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-}
-
-.pf-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.4rem;
-}
-
-.pf-desc {
-  font-size: 0.825rem;
-  color: var(--text-dim);
-  line-height: 1.6;
 }
 
 /* Pricing card section */
@@ -1648,86 +1595,87 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* Billing toggle */
-.pricing-toggle-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 3rem;
+/* Plan tier cards */
+.pricing-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  max-width: 1140px;
+  margin: 0 auto 4rem;
 }
 
-.pricing-toggle {
+.pricing-tier-card {
   position: relative;
-  display: inline-flex;
-  background: rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 4px;
-  gap: 0;
+  border-radius: var(--radius);
+  padding: clamp(28px, 2.6vw, 40px);
+  transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.pricing-toggle-pill {
+.pricing-tier-card:hover {
+  border-color: var(--border-hover);
+}
+
+.pricing-tier-card--featured {
+  border-color: rgba(224, 47, 46, 0.45);
+  background: rgba(224, 47, 46, 0.04);
+  box-shadow: 0 0 60px rgba(224, 47, 46, 0.1);
+}
+
+.pricing-tier-card--featured:hover {
+  border-color: rgba(224, 47, 46, 0.65);
+}
+
+.pricing-tier-badge {
   position: absolute;
-  top: 4px;
-  height: calc(100% - 8px);
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #fff;
   background: var(--accent);
   border-radius: 100px;
-  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.pricing-toggle-btn {
-  position: relative;
-  z-index: 1;
-  background: none;
-  border: none;
-  padding: 8px 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  border-radius: 100px;
-  transition: color 0.2s;
+  padding: 5px 14px;
   white-space: nowrap;
 }
 
-.pricing-toggle-btn.is-active {
-  color: #fff;
+.pricing-tier-tagline {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
 }
 
-.pricing-save-badge {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border: 1px solid rgba(224, 47, 46,0.25);
-  border-radius: 100px;
-  padding: 4px 12px;
-  letter-spacing: 0.04em;
-  transition: opacity 0.25s;
+.pricing-tier-card .pricing-price {
+  font-size: clamp(2.1rem, 2.6vw, 2.75rem);
 }
 
-/* The plan card */
-.pricing-plan-card {
-  display: flex;
-  gap: 0;
-  background: var(--card-bg);
-  border: 1px solid rgba(224, 47, 46,0.25);
-  border-radius: var(--radius);
-  overflow: hidden;
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  box-shadow: 0 0 80px rgba(224, 47, 46,0.08);
+.pricing-tier-card .pricing-checklist {
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 2rem;
 }
 
-.pricing-plan-left {
-  flex: 0 0 340px;
-  padding: clamp(32px, 3.5vw, 48px);
-  background: rgba(224, 47, 46,0.04);
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.pricing-tier-card .pricing-checklist li {
+  align-items: flex-start;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.pricing-tier-card .pricing-check {
+  padding-top: 1px;
+}
+
+.pricing-tier-cta {
+  margin-top: auto;
+  justify-content: center;
 }
 
 .pricing-plan-name {
@@ -1773,23 +1721,6 @@ body {
   justify-content: center;
 }
 
-.pricing-guarantee {
-  font-size: 0.75rem;
-  color: var(--text-dim);
-  text-align: center;
-}
-
-.pricing-plan-divider {
-  width: 1px;
-  background: var(--border);
-  flex-shrink: 0;
-}
-
-.pricing-plan-right {
-  flex: 1;
-  padding: clamp(32px, 3.5vw, 48px);
-}
-
 .pricing-checklist-label {
   font-size: 0.72rem;
   font-weight: 700;
@@ -1823,7 +1754,35 @@ body {
   flex-shrink: 0;
 }
 
-/* Billing breakdown */
+/* Add-ons */
+.pricing-addons-header {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.pricing-addons-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.pricing-addons-sub {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+
+.pricing-footnote {
+  max-width: 900px;
+  margin: 1.6rem auto 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* Add-ons / breakdown rows */
 .pricing-breakdown {
   max-width: 900px;
   margin: 0 auto;
@@ -1922,6 +1881,44 @@ body {
   font-size: 0.825rem;
   color: var(--text-dim);
   line-height: 1.65;
+}
+
+/* Contract terms variant of the FAQ grid */
+.pricing-faq-grid--terms {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Pricing responsive */
+@media (max-width: 1024px) {
+  .pricing-tiers-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .pricing-faq-grid,
+  .pricing-faq-grid--terms {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-breakdown-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pb-right {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-faq-grid,
+  .pricing-faq-grid--terms {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ─── MOBILE NAV ─── */
